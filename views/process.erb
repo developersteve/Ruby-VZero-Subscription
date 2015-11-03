@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>A Braintree Dropin Payments Example</title>
+  <head>
+    <title>A Braintree Vault Payments Example</title>
+    <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+    <link rel='stylesheet' href='/components/bootstrap/dist/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='/components/bootstrap/dist/css/custom.css'>
+  </head>
+  <body>
+    <div class='container'>
 
-  <link rel='stylesheet' href='/components/bootstrap/dist/css/bootstrap.min.css'>
-</head>
-<body>
-  <div class='container'>
-    <div class='row'>
-      <header>
-        <h1>Payment Success</h1>
-      </header>
-    </div>
+      <div class="col-md-offset-1 col-md-5 col-xs-12 col-sm-6">
+        <p>Customer: <%= @customer.id %></p>
+        <p>Plan ID: <%= @subscription.plan_id %></p>
+        <p>Payment Method Token: <%= @subscription.payment_method_token %></p>
+        <p>Subscription ID: <%= @subscription.id %></p>
+      </div>
 
-    <div class='row'>
-      <h2>Params</h2>
-      <%= @params.ai(html: true, indent: 2, plain: true) %>
-    </div>
+      <div class="col-md-offset-1 col-md-5 col-xs-12 col-sm-6">
+        <%= params.ai(html: true, plain: true) %>
+      </div>
 
-    <div class='row'>
-      <h2>Braintree::Transaction</h2>
-      <%= @transaction.ai(html: true, indent: 2, plain: true) %>
     </div>
-  </div>
-</body>
+  </body>
 </html>
