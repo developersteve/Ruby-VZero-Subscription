@@ -10,10 +10,10 @@
     <div class='container'>
 
       <div class="col-md-offset-1 col-md-5 col-xs-12 col-sm-6">
-        <p>A test user has been created on the Braintree with customer id <%= @custid %></p>
+        <p>A test user has been created on the Braintree with Customer ID: <%= @customer_id %></p>
       </div>
 
-      <form class='col-md-5 col-xs-12 col-sm-6' action='/step2' method='post'>
+      <form class='col-md-5 col-xs-12 col-sm-6' action='/store' method='post'>
 
         <div class="row">
           <div id='checkout'>
@@ -23,7 +23,7 @@
 
         <div class="row">
           <div class="input-group col-md-6">
-            <input type='hidden' value='<%= @custid %>' name='custid'>
+            <input type='hidden' value='<%= @customer_id %>' name='customer_id'>
             <input type='submit' value='Store Payment Method in Vault' class='btn btn-danger btn-lg'>
           </div>
         </div>
